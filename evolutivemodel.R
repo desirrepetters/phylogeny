@@ -18,5 +18,5 @@ Model <- modelTest(Alignment2, model = "all")
 # AIC, AICc, BIC are provided.
 Model <- Model[order(Model["AIC"]),]
 
-# See only the result.
+# See only the result, ordered by criteria selected
 Model
