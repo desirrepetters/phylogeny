@@ -1,0 +1,20 @@
+begin mrbayes;
+    log start filename = LOG.log replace;
+    set autoclose = no nowarn=yes;
+
+begin data;
+       dimensions ntax=0 nchar=0;
+       format datatype=DNA gap=- matchchar=. datatype=DNA;
+       Matrix
+
+inserir sequencias aqui
+
+;
+
+  lset nst=2;
+	prset statefreqpr=fixed(equal);
+	outgroup OUTGROUP;
+    mcmc ngen=10000000 printfreq=10000 samplefreq=100 nchains=4 temp=0.2 savebrlens=yes;  
+    sumt burnin=0.25 contype = halfcompat conformat=simple;
+    log stop;
+ end;
